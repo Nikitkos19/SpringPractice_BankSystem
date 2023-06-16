@@ -3,7 +3,7 @@ public class Application {
         Hello();
     }
     public static void Hello(){
-        System.out.println("");
+        System.out.println("Hello world");
 
 
     }
