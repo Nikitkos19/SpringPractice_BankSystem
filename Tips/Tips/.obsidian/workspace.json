@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Maintentance.md",
+                "file": "Schematic of BankApplication.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Maintentance.md",
+                "file": "Schematic of BankApplication.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Maintentance.md",
+                "file": "Schematic of BankApplication.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Maintentance.md"
+                "file": "Schematic of BankApplication.md"
               }
             }
           }
@@ -146,10 +146,10 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "57ebb26bcbbc8bf9",
+  "active": "28638b34911f4ab2",
   "lastOpenFiles": [
-    "Schematic of BankApplication.md",
     "Maintentance.md",
+    "Schematic of BankApplication.md",
     "Без названия"
   ]
 }
