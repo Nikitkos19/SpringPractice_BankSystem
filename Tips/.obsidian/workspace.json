@@ -1,22 +1,18 @@
 {
   "main": {
-    "id": "eff357aaca7842a8",
+    "id": "f04c30f2ea767ef4",
     "type": "split",
     "children": [
       {
-        "id": "ea3440cb79141c55",
+        "id": "0a65277139934c82",
         "type": "tabs",
         "children": [
           {
-            "id": "28638b34911f4ab2",
+            "id": "fdc38639e2eab8ce",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Maintentance.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -25,15 +21,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "d0f08a9fd6f51feb",
+    "id": "37be822cd167e7dc",
     "type": "split",
     "children": [
       {
-        "id": "b7413141e96c69f5",
+        "id": "dbb6ddfe49bc6345",
         "type": "tabs",
         "children": [
           {
-            "id": "57ebb26bcbbc8bf9",
+            "id": "c893dcbbd203d433",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +39,7 @@
             }
           },
           {
-            "id": "6bbf48bee65c0bd5",
+            "id": "c25404852a8191fc",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +54,7 @@
             }
           },
           {
-            "id": "7427c8d1305de535",
+            "id": "91f180db3c89211a",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -72,20 +68,19 @@
     "width": 300
   },
   "right": {
-    "id": "85a29197aa1a39b9",
+    "id": "ab63f6f95ce97fa7",
     "type": "split",
     "children": [
       {
-        "id": "6331bc8057d60dca",
+        "id": "9726af27d51b36dd",
         "type": "tabs",
         "children": [
           {
-            "id": "fc99093966288003",
+            "id": "0eb3758db5bdd13d",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Maintentance.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +92,18 @@
             }
           },
           {
-            "id": "86676ce304f3990f",
+            "id": "fed9bf35fe62cc53",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Maintentance.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "770df102547d248f",
+            "id": "740040c6ade2e305",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,13 +114,11 @@
             }
           },
           {
-            "id": "662030b795b9b81d",
+            "id": "6e7cfd80e48599a3",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Maintentance.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,10 +138,6 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "57ebb26bcbbc8bf9",
-  "lastOpenFiles": [
-    "Schematic of BankApplication.md",
-    "Maintentance.md",
-    "Без названия"
-  ]
+  "active": "fdc38639e2eab8ce",
+  "lastOpenFiles": []
 }
