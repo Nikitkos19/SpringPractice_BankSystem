@@ -15,15 +15,15 @@ public class BalanceController {
 
     @GetMapping("/{accountId}")
     public BigDecimal getBalance(@PathVariable Long accountId){
-        return BankService.getBalance(accountId);
+        return bankService.getBalance(accountId);
     }
     @PostMapping("/add")
     public BigDecimal addMoney(@RequestBody FastBalance fastBalance) {
-        return BankService.addMoney(fastBalance.getTo(), fastBalance.getAmount());
+        return bankService.addMoney(fastBalance.getTo(), fastBalance.getAmount());
     }
     @PostMapping("/transfer")
-    public BigDecimal transferMoney(@RequestBody FastBalance fastBalance) {
-        BankService.transferMoney(fastBalance);
+    public void transferMoney(@RequestBody FastBalance fastBalance) {
+        bankService.transferMoney(fastBalance);
     }
 
 
