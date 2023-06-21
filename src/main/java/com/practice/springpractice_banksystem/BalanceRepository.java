@@ -10,7 +10,6 @@ import java.util.Map;
 public class BalanceRepository {
     private final Map<Long, BigDecimal> storage = new HashMap<>(Map.of(1L, BigDecimal.TEN));
 
-
     public BigDecimal getBalanceForId(Long accountId) {
         return storage.get(accountId);
     }
