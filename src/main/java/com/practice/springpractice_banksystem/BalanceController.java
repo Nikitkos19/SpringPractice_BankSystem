@@ -25,8 +25,12 @@ public class BalanceController {
     public void transferMoney(@RequestBody FastBalance fastBalance) {
         bankService.transferMoney(fastBalance);
     }
-
-
+ @PostMapping()
+    public String create(@ModelAttribute("person") Person person){
+        // здесь нужно будет добавлять данные в БД
+        return "successPage";
+    }
+//я хз, что с этим делать, cкорее всего этот метод надо заебащить в transferMoney(его части)
 
 
 }
