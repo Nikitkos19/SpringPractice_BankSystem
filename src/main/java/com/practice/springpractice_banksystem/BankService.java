@@ -12,15 +12,15 @@ import java.math.BigDecimal;
 public class BankService {
 
     private BalanceRepository balanceRepository;
-    public Long getBalance(Person person) {
-       Long balance = balanceRepository.getBalanceForId(person.getAccountId());
+    public Long getBalance(Long accountId) {
+       Long balance = balanceRepository.getBalanceForId(accountId);
 
        if(balance == null)
            throw new IllegalArgumentException();
        else
            return balance;
     }
-    public BigDecimal addMoney(Long to, BigDecimal amount) {
+    public Long addMoney(Long to, BigDecimal amount) {
 
         return null;
     }

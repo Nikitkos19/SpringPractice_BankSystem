@@ -14,11 +14,11 @@ public class BalanceController {
     private final BankService bankService;
 
     @GetMapping("/{accountId}")
-    public Long getBalance(@PathVariable Person person){
-        return bankService.getBalance(person);
+    public Long getBalance(@PathVariable Long accountId){
+        return bankService.getBalance(accountId);
     }
     @PostMapping("/add")
-    public BigDecimal addMoney(@RequestBody FastBalance fastBalance) {
+    public Long addMoney(@RequestBody FastBalance fastBalance) {
         return bankService.addMoney(fastBalance.getTo(), fastBalance.getAmount());
     }
     @PostMapping("/transfer")
@@ -30,7 +30,7 @@ public class BalanceController {
         person = bankService.setup(person);
         return "successPage";
     }
-//я хз, что с этим делать, cкорее всего этот метод надо заебащить в transferMoney(его части)
+
 
 
 }
