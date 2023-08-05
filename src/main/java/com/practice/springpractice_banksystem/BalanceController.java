@@ -1,6 +1,6 @@
 package com.practice.springpractice_banksystem;
 
-import com.practice.springpractice_banksystem.model.FastBalance;
+import com.practice.springpractice_banksystem.model.*;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +25,10 @@ public class BalanceController {
     public void transferMoney(@RequestBody FastBalance fastBalance) {
         bankService.transferMoney(fastBalance);
     }
- @PostMapping()
-    public String create(@ModelAttribute("person") Person person){
-        // здесь нужно будет добавлять данные в БД
+    @PostMapping()
+    public String create(@ModelAttribute("Person") Person person){
+        person = new Person();
+
         return "successPage";
     }
 //я хз, что с этим делать, cкорее всего этот метод надо заебащить в transferMoney(его части)
