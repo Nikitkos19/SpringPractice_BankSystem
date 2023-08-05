@@ -31,6 +31,11 @@ public class BalanceController {
         return "successPage";
     }
 
+    @PostMapping()
+    public String create(@ModelAttribute("person") Person person){
+        // здесь нужно будет добавлять данные в БД
+        return "successPage";
+    }
 
 
 }
