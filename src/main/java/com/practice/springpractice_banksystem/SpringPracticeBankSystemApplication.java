@@ -8,7 +8,7 @@ public class SpringPracticeBankSystemApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringPracticeBankSystemApplication.class, args);
-        //BankFrame bankFrame = new BankFrame();
+
     }
 
 }
