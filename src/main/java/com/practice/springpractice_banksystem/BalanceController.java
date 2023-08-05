@@ -14,8 +14,8 @@ public class BalanceController {
     private final BankService bankService;
 
     @GetMapping("/{accountId}")
-    public BigDecimal getBalance(@PathVariable Long accountId){
-        return bankService.getBalance(accountId);
+    public Long getBalance(@PathVariable Person person){
+        return bankService.getBalance(person);
     }
     @PostMapping("/add")
     public BigDecimal addMoney(@RequestBody FastBalance fastBalance) {
@@ -27,8 +27,7 @@ public class BalanceController {
     }
     @PostMapping()
     public String create(@ModelAttribute("Person") Person person){
-        person = new Person();
-
+        person = bankService.setup(person);
         return "successPage";
     }
 //я хз, что с этим делать, cкорее всего этот метод надо заебащить в transferMoney(его части)
