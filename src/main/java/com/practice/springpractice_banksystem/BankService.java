@@ -1,10 +1,8 @@
 package com.practice.springpractice_banksystem;
 
 import com.practice.springpractice_banksystem.model.FastBalance;
-import com.practice.springpractice_banksystem.model.Person;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 
 @Service
@@ -12,26 +10,37 @@ import java.math.BigDecimal;
 public class BankService {
 
     private BalanceRepository balanceRepository;
-    public Long getBalance(Long accountId) {
-       Long balance = balanceRepository.getBalanceForId(accountId);
+    public BigDecimal getBalance(Long accountId) {
+       BigDecimal balance = balanceRepository.getBalanceForId(accountId);
 
        if(balance == null)
            throw new IllegalArgumentException();
        else
            return balance;
     }
-    public Long addMoney(Long to, BigDecimal amount) {
-
-        return null;
+    public BigDecimal addMoney(Long to, BigDecimal amount) {
+        BigDecimal currentBalance = balanceRepository.getBalanceForId(to);
+        if(currentBalance == null){
+            balanceRepository.save(to,amount);
+            return amount;
+        }else{
+            BigDecimal updatedBalance = currentBalance.add(amount);
+            balanceRepository.save(to, updatedBalance);
+            return updatedBalance;
+        }
     }
     public void transferMoney(FastBalance fastBalance) {
+        BigDecimal fromBalance = balanceRepository.getBalanceForId(fastBalance.getFrom());
+        BigDecimal toBalance = balanceRepository.getBalanceForId(fastBalance.getTo());
 
+        if(fromBalance == null || toBalance == null) throw new IllegalArgumentException();
+        if(fastBalance.getAmount().compareTo(fromBalance) > 0) throw new IllegalArgumentException("Денег нет, но вы держитесь.");
 
-    }
-    public Person setup(Person person) {
+        BigDecimal updatedFromBalance = fromBalance.subtract(fastBalance.getAmount());
+        BigDecimal updatedToBalance = toBalance.add(fastBalance.getAmount());
 
-
-        return person;
+        balanceRepository.save(fastBalance.getFrom(), updatedFromBalance);
+        balanceRepository.save(fastBalance.getTo(), updatedToBalance);
     }
 
 }
