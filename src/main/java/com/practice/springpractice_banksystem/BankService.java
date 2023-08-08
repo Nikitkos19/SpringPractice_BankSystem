@@ -23,7 +23,9 @@ public class BankService {
         if(currentBalance == null){
             balanceRepository.save(to,amount);
             return amount;
-        }else{
+        }
+        
+        else{
             BigDecimal updatedBalance = currentBalance.add(amount);
             balanceRepository.save(to, updatedBalance);
             return updatedBalance;

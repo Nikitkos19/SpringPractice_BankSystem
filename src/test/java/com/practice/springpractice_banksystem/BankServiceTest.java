@@ -29,7 +29,7 @@ class BankServiceTest {
         fastBalance.setTo(1L);
         fastBalance.setAmount(BigDecimal.valueOf(50));
         bankService.transferMoney(fastBalance);
-        assertEquals(balanceRepository.getBalanceForId(1L), 60);
-        assertEquals(balanceRepository.getBalanceForId(2L), 50);
+        assertEquals(balanceRepository.getBalanceForId(1L), BigDecimal.valueOf(60));
+        assertEquals(balanceRepository.getBalanceForId(2L), BigDecimal.valueOf(50));
     }
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankApplication</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <form action="" onsubmit="() => false">
+          <h1>BankApplication</h1>
+
+          <div class="input-container">
+            <div class="input-box">
+              <!-- Можно поставить box-icon и перед input, и после -->
+              <box-icon type="solid" name="bank" color="white"></box-icon><input class="from" type="text" placeholder="from" required />
+            </div>
+            
+            <div class="input-box">
+              <!-- Можно поставить box-icon и перед input, и после -->
+              <box-icon name="user" color="white"></box-icon><input class="to" type="text" placeholder="to" required />
+            </div>
+          </div>
+  
+          <div class="remember-forgot">
+            <!-- <label>
+              <input type="checkbox"/> Я хз, зачем он здесь, но я умею так делать
+            </label> -->   
+            <a href="#" class="help">You need help?</a>
+          </div>
+
+          <input type="submit" class="transfer" value="Transfer money">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
