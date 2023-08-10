@@ -14,6 +14,6 @@ public class BalanceRepository {
         return storage.get(accountId);
     }
     public void save(Long to, BigDecimal amount) {
-        storage.put(to, mount);
+        storage.put(to, amount);
     }
 }
