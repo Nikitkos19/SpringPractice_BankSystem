@@ -35,7 +35,7 @@ public class BalanceRepository {
             ResultSet resultSet = statement.executeQuery(SQL);
 
             while(resultSet.next()){
-                balance.add(resultSet.getInt("id") - 1, resultSet.getBigDecimal("balance"));
+                balance.add(resultSet.getInt("id"), resultSet.getBigDecimal("balance"));
             }
 
         } catch (SQLException e) {
@@ -48,6 +48,15 @@ public class BalanceRepository {
         return balance.get(accountId.intValue());
     }
     public void save(Long to, BigDecimal amount) {
-        storage.put(to, amount);
+
+        try {
+            Statement statement = connection.createStatement();
+            String SQL = "INSERT INTO Balance VALUES (" + to.intValue() + ", " + amount + ")";
+            statement.executeUpdate(SQL);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }
