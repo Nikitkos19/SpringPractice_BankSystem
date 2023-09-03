@@ -1,0 +1,79 @@
+
+$default-size: 25px;
+$default-radius: 10px;
+
+@mixin flex($direction: column){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+%none-borders{
+    border: none;
+    outline: none;
+}
+
+.form{
+    @include flex;
+
+    height: 60vh;
+    width: 20vw;
+
+    box-shadow: 0 0 40px white;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+
+    border-radius: 15px;
+}
+
+
+
+.inputs{
+    @include flex;
+
+}
+
+.inputs input{
+    font-size: $default-size;
+    border-radius: $default-radius;
+
+    @extend %none-borders;
+
+    padding: 15px;
+    margin: 15px 0;
+    
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.inputs input::placeholder{
+    color: black;
+    font-size: 18px;
+}
+
+
+.register{
+    font-size: 30px;
+    padding: 15px;
+
+    @extend %none-borders;
+
+    border-radius: $default-radius;
+    cursor: pointer;
+
+    background-color: rgb(0, 213, 28);
+    color: black;
+
+    transition: .3s;
+}
+
+.register:hover{
+    background-color: rgb(0, 255, 34);
+    box-shadow: 0 0 10px rgb(0, 255, 34);
+}
+
+h1{
+    font-size: 40px;
+    color: black;
+}
