@@ -31,7 +31,7 @@ public class BalanceRepository {
 
         try {
             Statement statement = connection.createStatement();
-            String SQL = "SELECT * FROM Balance";
+            String SQL = "select * from person order by id";
             ResultSet resultSet = statement.executeQuery(SQL);
 
             while(resultSet.next()){

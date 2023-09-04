@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "85a29197aa1a39b9",
@@ -146,7 +147,7 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "30620ac48c2d3d45",
+  "active": "57ebb26bcbbc8bf9",
   "lastOpenFiles": [
     "Schematic of BankApplication.md",
     "Maintentance.md",
