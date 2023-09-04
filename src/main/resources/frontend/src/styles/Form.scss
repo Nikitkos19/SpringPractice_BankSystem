@@ -1,3 +1,4 @@
+@use "sass:math";
 
 $default-size: 25px;
 $default-radius: 10px;
@@ -18,7 +19,7 @@ $default-radius: 10px;
     @include flex;
 
     height: 60vh;
-    width: 20vw;
+    width: 400px;
 
     box-shadow: 0 0 40px white;
     background-color: transparent;
