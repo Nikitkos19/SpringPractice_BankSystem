@@ -51,7 +51,7 @@ public class BalanceRepository {
 
         try {
             Statement statement = connection.createStatement();
-            String SQL = "INSERT INTO Balance VALUES (" + to.intValue() + ", " + amount + ")";
+            String SQL = "INSERT INTO person VALUES (" + to.intValue() + ", "  + to.intValue() + ", 123456789, " + amount + ")";
             statement.executeUpdate(SQL);
 
         } catch (SQLException e) {
