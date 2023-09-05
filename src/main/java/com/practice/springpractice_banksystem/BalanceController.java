@@ -34,7 +34,7 @@ public class BalanceController {
     @ExceptionHandler(IllegalArgumentException.class)
     public String handle(IllegalArgumentException e){
         log.error(e.getMessage());
-        return "Этого баланса пока не существует.";
+        return e.getMessage();
     }
 
 }

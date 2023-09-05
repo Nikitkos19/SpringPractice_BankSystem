@@ -20,10 +20,11 @@ public class BankService {
     }
     public BigDecimal addMoney(Long to, BigDecimal amount) {
         int length = balanceRepository.getLengthOfRepos();
-        if(to >= length){
+        if(to == length){
             balanceRepository.save(to,amount);
             return amount;
         }
+        else if(to > length) throw new IllegalArgumentException("id слишком большой, используйте: " + balanceRepository.getLengthOfRepos());
         else{
             BigDecimal currentBalance = balanceRepository.getBalanceForId(to);
             BigDecimal updatedBalance = currentBalance.add(amount);
@@ -35,14 +36,13 @@ public class BankService {
         BigDecimal fromBalance = balanceRepository.getBalanceForId(fastBalance.getFrom());
         BigDecimal toBalance = balanceRepository.getBalanceForId(fastBalance.getTo());
 
-        if(fromBalance == null || toBalance == null) throw new IllegalArgumentException();
+        if(fromBalance == null || toBalance == null) throw new IllegalArgumentException("Таких счетов пока не существует.");
         if(fastBalance.getAmount().compareTo(fromBalance) > 0) throw new IllegalArgumentException("Денег нет, но вы держитесь.");
 
         BigDecimal updatedFromBalance = fromBalance.subtract(fastBalance.getAmount());
         BigDecimal updatedToBalance = toBalance.add(fastBalance.getAmount());
 
-        balanceRepository.save(fastBalance.getFrom(), updatedFromBalance);
-        balanceRepository.save(fastBalance.getTo(), updatedToBalance);
+        balanceRepository.update(fastBalance.getFrom(), updatedFromBalance);
+        balanceRepository.update(fastBalance.getTo(), updatedToBalance);
     }
-
 }
