@@ -19,15 +19,15 @@ public class BankService {
            return balance;
     }
     public BigDecimal addMoney(Long to, BigDecimal amount) {
-        BigDecimal currentBalance = balanceRepository.getBalanceForId(to);
-        if(currentBalance == null){
+        int length = balanceRepository.getLengthOfRepos();
+        if(to >= length){
             balanceRepository.save(to,amount);
             return amount;
         }
-        
         else{
+            BigDecimal currentBalance = balanceRepository.getBalanceForId(to);
             BigDecimal updatedBalance = currentBalance.add(amount);
-            balanceRepository.save(to, updatedBalance);
+            balanceRepository.update(to, updatedBalance);
             return updatedBalance;
         }
     }

@@ -47,8 +47,11 @@ public class BalanceRepository {
         List<BigDecimal> balance = index();
         return balance.get(accountId.intValue());
     }
+    public int getLengthOfRepos(){
+        List<BigDecimal> balance = index();
+        return balance.toArray().length;
+    }
     public void save(Long to, BigDecimal amount) {
-
         try {
             Statement statement = connection.createStatement();
             String SQL = "INSERT INTO person VALUES (" + to.intValue() + ", "  + to.intValue() + ", 123456789, " + amount + ")";
@@ -57,6 +60,15 @@ public class BalanceRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public void update(Long to, BigDecimal amount) {
+        try {
+            Statement statement = connection.createStatement();
+            String SQL = "update person set balance = " + amount + " where id = " + to;
+            statement.executeUpdate(SQL);
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
