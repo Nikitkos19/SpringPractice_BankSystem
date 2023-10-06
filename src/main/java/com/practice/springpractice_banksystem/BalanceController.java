@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @RestController("/balance")
@@ -18,6 +20,10 @@ public class BalanceController {
     @GetMapping("/{accountId}")
     public BigDecimal getBalance(@PathVariable Long accountId){
         return bankService.getBalance(accountId);
+    }
+    @GetMapping("/index")
+    public List<BigDecimal> getIndex(){
+        return bankService.getIndex();
     }
     @PostMapping("/add")
     public BigDecimal addMoney(@RequestBody FastBalance fastBalance) {

@@ -4,6 +4,8 @@ import com.practice.springpractice_banksystem.model.FastBalance;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -51,5 +53,14 @@ public class BankService {
             throw new IllegalArgumentException("id не тот, используйте: " + (balanceRepository.getLengthOfRepos() - 1));
         else
             balanceRepository.delete(to);
+    }
+
+    public List<BigDecimal> getIndex() {
+        List<BigDecimal> values = balanceRepository.index();
+
+        if(values == null)
+            throw new IllegalArgumentException();
+        else
+            return values;
     }
 }
