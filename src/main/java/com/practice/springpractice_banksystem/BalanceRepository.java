@@ -71,4 +71,15 @@ public class BalanceRepository {
             e.printStackTrace();
         }
     }
+
+    public void delete(Long to) {
+        try {
+            Statement statement = connection.createStatement();
+            String SQL = "delete from person where id = " + to;
+            statement.executeUpdate(SQL);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

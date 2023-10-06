@@ -31,6 +31,10 @@ public class BalanceController {
     public String create(@ModelAttribute("Balance") FastBalance fastBalance){
         return "successPage";
     }
+    @PostMapping("/delete")
+    public void delete(@RequestBody FastBalance fastBalance){
+        bankService.delete(fastBalance.getTo());
+    }
     @ExceptionHandler(IllegalArgumentException.class)
     public String handle(IllegalArgumentException e){
         log.error(e.getMessage());

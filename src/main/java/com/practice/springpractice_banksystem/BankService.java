@@ -24,7 +24,8 @@ public class BankService {
             balanceRepository.save(to,amount);
             return amount;
         }
-        else if(to > length) throw new IllegalArgumentException("id слишком большой, используйте: " + balanceRepository.getLengthOfRepos());
+        else if(to > length)
+            throw new IllegalArgumentException("id слишком большой, используйте: " + balanceRepository.getLengthOfRepos());
         else{
             BigDecimal currentBalance = balanceRepository.getBalanceForId(to);
             BigDecimal updatedBalance = currentBalance.add(amount);
@@ -44,5 +45,11 @@ public class BankService {
 
         balanceRepository.update(fastBalance.getFrom(), updatedFromBalance);
         balanceRepository.update(fastBalance.getTo(), updatedToBalance);
+    }
+    public void delete(Long to) {
+        if(to != balanceRepository.getLengthOfRepos() - 1)
+            throw new IllegalArgumentException("id не тот, используйте: " + (balanceRepository.getLengthOfRepos() - 1));
+        else
+            balanceRepository.delete(to);
     }
 }
